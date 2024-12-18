@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from 'dotenv';
 import authRoutes from "./routes/auth.routes.js"
-import connectDB from "./config/MongoDB.js";
+import connectDB from "./lib/MongoDB.js";
 dotenv.config();
 
 
