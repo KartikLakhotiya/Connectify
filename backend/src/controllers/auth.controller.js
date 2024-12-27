@@ -26,6 +26,7 @@ export const signup = async (req, res) => {
             password: hashedPassword,
         });
 
+
         if (newUser) {
             // generate jwt token here
             generateToken(newUser._id, res);
@@ -47,7 +48,31 @@ export const signup = async (req, res) => {
 };;
 
 
-export const login = (req, res) => {
+export const login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "Invalid Credentials." })
+        }
+
+        const isPassCorrect = await bcrypt.compare(password, user.password);
+        if (!isPassCorrect) {
+            return res.status(404).json({ message: "Invalid Credentials." })
+        }
+        generateToken(user._id, res);
+        res.status(200).json({
+            _id: user._id,
+            fullName: user.fullName,
+            email: user.email,
+            profilePic: user.profilePic,
+            message: "User logged in successfully"
+        })
+    }
+    catch (error) {
+        console.log("Error in login controller", error.message);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
 
 }
 
