@@ -1,16 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react'
+import Navbar from './components/Navbar'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Login from './pages/Login'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Signup from './pages/Signup'
+import Settings from './pages/Settings'
+import { Toaster } from 'react-hot-toast'
+import { useAuthStore } from './store/useAuthStore'
+import { Loader, Loader2 } from 'lucide-react'
 
-function App() { 
+const App = () => {
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth])
+
+  console.log(authUser);
+  if (isCheckingAuth && !authUser) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <Loader2 className='size-10 animate-spin' />
+      </div>
+    )
+  }
 
   return (
-    <>
-      <h1 className="text-4xl font-semibold underline">
-        Hello World !
-      </h1>
-    </>
+    <div>
+
+      <Navbar />
+      <Routes>
+        <Route path='/' element={authUser ? <Home /> : <Navigate to="/login" />} />
+        <Route path='/login' element={!authUser ? <Login /> : <Navigate to="/" />} />
+        <Route path='/signup' element={!authUser ? <Signup /> : <Navigate to="/" />} />
+        <Route path='/profile' element={authUser ? <Profile /> : <Navigate to="/login" />} />
+        <Route path='/settings' element={<Settings />} />
+      </Routes>
+      <Toaster
+        toastOptions={{
+          style: {
+            background: "#36454F", // Global background color
+            color: "#fff", // Global text color
+          },
+        }}
+      />
+
+    </div>
   )
 }
 
