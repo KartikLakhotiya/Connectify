@@ -46,15 +46,15 @@ const SignUpPage = () => {
                             >
                                 <MessageSquare className="size-6 text-primary" />
                             </div>
-                            <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-                            <p className="text-base-content/60">Get started with your free account</p>
+                            <h1 className="text-2xl font-bold mt-2 text-gray-300">Create Account</h1>
+                            <p className="text-base-content/60 text-gray-300">Get started with your free account</p>
                         </div>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Full Name</span>
+                                <span className="label-text font-medium text-gray-300">Full Name</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -62,7 +62,7 @@ const SignUpPage = () => {
                                 </div>
                                 <input
                                     type="text"
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input border-gray-600 w-full pl-10 text-white`}
                                     placeholder="John Doe"
                                     value={formData.fullName}
                                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -72,7 +72,7 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Email</span>
+                                <span className="label-text font-medium text-gray-300">Email</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -80,7 +80,7 @@ const SignUpPage = () => {
                                 </div>
                                 <input
                                     type="email"
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input border-gray-600 w-full pl-10 text-white`}
                                     placeholder="you@example.com"
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -90,7 +90,7 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Password</span>
+                                <span className="label-text font-medium text-gray-300">Password</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -98,7 +98,7 @@ const SignUpPage = () => {
                                 </div>
                                 <input
                                     type={showPassword ? "text" : "password"}
-                                    className={`input input-bordered w-full pl-10`}
+                                    className={`input border-gray-600 w-full pl-10 text-white`}
                                     placeholder="••••••••"
                                     value={formData.password}
                                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -130,7 +130,7 @@ const SignUpPage = () => {
                     </form>
 
                     <div className="text-center">
-                        <p className="text-base-content/60">
+                        <p className="text-base-content/60 text-gray-300">
                             Already have an account?{" "}
                             <Link to="/login" className="link link-primary">
                                 Sign in
