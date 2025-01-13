@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as Lucide from "lucide-react"; // Import all icons from Lucide React
-
+import { motion } from "framer-motion";
 const icons = [
     "Sun", "Moon", "Star", "Heart", "Smile", "Cloud", "Zap", "Coffee", "Leaf",
 ]; // List of available icon names in Lucide
@@ -27,16 +27,21 @@ const AuthImagePattern = ({ title, subtitle }) => {
                         return (
                             <div
                                 key={i}
-                                className={`aspect-square flex items-center justify-center rounded-2xl bg-primary/10 ${i % 2 === 0 ? "animate-pulse" : ""
-                                    }`}
+                                className={`aspect-square flex items-center justify-center rounded-2xl bg-primary/10 ${i % 2 === 0 ? "animate-pulse" : ""}`}
                             >
                                 <IconComponent className="w-6 h-6 text-primary" />
                             </div>
                         );
                     })}
                 </div>
-                <h2 className="text-2xl font-bold mb-4 text-gray-300">{title}</h2>
-                <p className="text-base-content/60 text-gray-300">{subtitle}</p>
+                <motion.div
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <h2 className="text-2xl font-bold mb-4 text-gray-300">{title}</h2>
+                    <p className="text-base-content/60 text-gray-300">{subtitle}</p>
+                </motion.div>
             </div>
         </div>
     );
