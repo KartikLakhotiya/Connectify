@@ -54,7 +54,7 @@ const Profile = () => {
                             </label>
                         </div>
                         <p className="text-sm text-zinc-400">
-                            {isUpdatingProfile ? "Uploading..." : "Click the camera icon to update your photo"}
+                            {isUpdatingProfile ? "Uploading..." : "Click the camera icon to update your photo (Photo should be less than 1 MB.)"}
                         </p>
                     </div>
 
