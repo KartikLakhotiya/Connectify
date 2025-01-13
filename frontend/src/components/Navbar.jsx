@@ -21,10 +21,7 @@ const Navbar = () => {
                     <div className="flex items-center gap-2">
                         <Link
                             to={"/settings"}
-                            className={`
-              btn btn-sm gap-2 transition-colors
-              
-              `}
+                            className={`btn btn-sm gap-2 transition-colors`}
                         >
                             <Settings className="w-4 h-4" />
                             <span className="hidden sm:inline">Settings</span>
@@ -39,7 +36,7 @@ const Navbar = () => {
 
                                 <button className="flex gap-2 items-center ml-5 mr-2" onClick={logout}>
                                     <LogOut className="size-5 text-red-400" />
-                                    <span className="hidden sm:inline text-red-400">Logout</span>
+                                    <span className="hidden sm:inline text-red-400 hover:underline">Logout</span>
                                 </button>
                             </>
                         )}

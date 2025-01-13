@@ -8,7 +8,7 @@ import Signup from './pages/Signup'
 import Settings from './pages/Settings'
 import { Toaster } from 'react-hot-toast'
 import { useAuthStore } from './store/useAuthStore'
-import { Loader, Loader2 } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { useThemeStore } from './store/useThemeStore'
 
 const App = () => {
