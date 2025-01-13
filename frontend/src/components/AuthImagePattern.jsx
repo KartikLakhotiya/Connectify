@@ -39,8 +39,8 @@ const AuthImagePattern = ({ title, subtitle }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-2xl font-bold mb-4 text-gray-300">{title}</h2>
-                    <p className="text-base-content/60 text-gray-300">{subtitle}</p>
+                    <h2 className="text-2xl font-bold mb-4 ">{title}</h2>
+                    <p className="text-base-content/60 ">{subtitle}</p>
                 </motion.div>
             </div>
         </div>

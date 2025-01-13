@@ -51,8 +51,8 @@ const SignUpPage = () => {
                             >
                                 <MessageSquare className="w-6 h-6 text-primary" />
                             </div>
-                            <h1 className="text-2xl font-bold mt-2 text-gray-300">Create Account</h1>
-                            <p className="text-base-content/60 text-gray-300">
+                            <h1 className="text-2xl font-bold mt-2 ">Create Account</h1>
+                            <p className="text-base-content/60 ">
                                 Get started with your free account
                             </p>
                         </div>
@@ -61,7 +61,7 @@ const SignUpPage = () => {
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium text-gray-300">Full Name</span>
+                                <span className="label-text font-medium ">Full Name</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -81,7 +81,7 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium text-gray-300">Email</span>
+                                <span className="label-text font-medium ">Email</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -101,7 +101,7 @@ const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium text-gray-300">Password</span>
+                                <span className="label-text font-medium ">Password</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -147,7 +147,7 @@ const SignUpPage = () => {
                     </form>
 
                     <div className="text-center mt-4">
-                        <p className="text-base-content/60 text-gray-300">
+                        <p className="text-base-content/60 ">
                             Already have an account?{" "}
                             <Link to="/login" className="link link-primary">
                                 Login
