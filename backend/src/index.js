@@ -5,7 +5,10 @@ import messageRoutes from "./routes/message.routes.js"
 import connectDB from "./lib/MongoDB.js";
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import path from "path";
 import { app, server } from "./lib/socket.js";
+
+
 dotenv.config();
 
 
