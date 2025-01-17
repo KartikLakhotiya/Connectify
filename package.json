@@ -1,0 +1,21 @@
+{
+  "name": "connectify",
+  "version": "1.0.0",
+  "description": "An real time chat application made with MERN Stack.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KartikLakhotiya/Connectify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KartikLakhotiya/Connectify/issues"
+  },
+  "homepage": "https://github.com/KartikLakhotiya/Connectify#readme"
+}
