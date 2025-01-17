@@ -29,10 +29,18 @@ const Navbar = () => {
 
                         {authUser && (
                             <>
-                                <Link to={"/profile"} className={`btn btn-sm gap-2 ml-5`}>
-                                    <User className="size-5" />
-                                    <span className="hidden sm:inline">Profile</span>
+                                <Link to={"/profile"} className={`btn`}>
+                                    <div
+                                        className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold"
+                                        title={authUser.fullName || "User"}
+                                    >
+                                        {authUser.fullName?.[0].toUpperCase() || "U"}
+                                    </div>
+                                    <span className="hidden sm:inline">{authUser.fullName}</span>
                                 </Link>
+
+                                {/* Profile Picture or Initial */}
+
 
                                 <button className="flex gap-2 items-center ml-5 mr-2" onClick={logout}>
                                     <LogOut className="size-5 text-red-400" />
@@ -46,4 +54,5 @@ const Navbar = () => {
         </header>
     );
 };
+
 export default Navbar;
