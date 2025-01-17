@@ -5,11 +5,11 @@ import messageRoutes from "./routes/message.routes.js"
 import connectDB from "./lib/MongoDB.js";
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import { app, server } from "./lib/socket.js";
 dotenv.config();
 
 
 const PORT = process.env.PORT;
-const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     res.send("Connectify server is ready.");
 })
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
     connectDB();
 })

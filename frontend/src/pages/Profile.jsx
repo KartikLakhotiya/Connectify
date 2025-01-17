@@ -40,7 +40,8 @@ const Profile = () => {
                                 className="size-32 rounded-full object-cover border-4 "
                             />
                             <label
-                                htmlFor="avatar-upload" className={`absolute bottom-0 right-0 bg-base-content hover:scale-105 p-2 rounded-full cursor-pointer transition-all duration-200 ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}`}
+                                htmlFor="avatar-upload"
+                                className={`absolute bottom-0 right-0 bg-base-content hover:scale-105 p-2 rounded-full cursor-pointer transition-all duration-200 ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}`}
                             >
                                 <Camera className="w-5 h-5 text-base-200" />
                                 <input
